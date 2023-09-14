@@ -1,4 +1,8 @@
 h1 {
     color: darkgreen;
-    
+
+}
+
+#table-style {
+    border: 2px solid black;
 }
