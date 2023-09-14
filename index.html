@@ -12,10 +12,21 @@
         </header>
         <main>
             <form>
-                <input id="first-name" type="text" placeholder="first name..." required>
-                <button id="submit" type="submit" onclick="">Submit</button>
+
+<!-- input fields -->
+                <input id="first-name" type="text" placeholder="first name...">
+                <input id="last-name" type="text" placeholder="last name...">
+                <input id="id-number" type="text" placeholder="id number...">
+                <input id="title-name" type="text" placeholder="title...">
+                <input id="annual-salary" type="text" placeholder="annual salary...">
+
+<!-- submit button -->
+                <button id="submit" type="submit" onclick="addEmployee(event)">Submit</button>
+
                 <h2>Employees</h2>
-                    <table id="table-style">
+
+<!-- table for inputs -->
+                    <table id="employee-table">
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
@@ -26,8 +37,13 @@
                         </tr>
                     </table>
 
+
+<!-- total monthly portion -->
+                <div>
+                    <h4>Total Monthly Salary:</h4>
+                </div>
                 <div id="total-month">
-                    <h4>Total Monthly Salary</h4>
+                    <!-- more inner html -->
                 </div>
 
 
