@@ -14,15 +14,27 @@
             <form>
 
 <!-- input fields -->
-                <input id="first-name" type="text" placeholder="first name...">
-                <input id="last-name" type="text" placeholder="last name...">
-                <input id="id-number" type="text" placeholder="id number...">
-                <input id="title-name" type="text" placeholder="title...">
-                <input id="annual-salary" type="text" placeholder="annual salary...">
+        <div id="two-col">
+            <div id="input-field">
+                <div>First Name<input id="first-name" type="text" placeholder="first name..."></div>
+                <div>Last Name<input id="last-name" type="text" placeholder="last name..."></div>
+                <div>ID Number<input id="id-number" type="text" placeholder="id number..."></div>
+                <div>Title<input id="title-name" type="text" placeholder="title..."></div>
+                <div>Annual Salary<input id="annual-salary" type="text" placeholder="annual salary..."></div>
+            </div>
+
+                <div><button id="submit-btn" type="submit" onclick="addEmployee(event)">Submit</button></div>
+
+            <div id="monthly-salary">
+                
+                <h4 id="turn-red">Total Monthly Salary</h4>
+                <div id="total-month">
+                    <!-- more inner html -->
+                </div>
+            </div>
+        </div>
 
 <!-- submit button -->
-                <button id="submit" type="submit" onclick="addEmployee(event)">Submit</button>
-
                 <h2>Employees</h2>
 
 <!-- table for inputs -->
@@ -36,28 +48,21 @@
                             <th>delete button</th>
                         </tr>
                         <tr id="place-holder">
-                            <th>Ben</th>
-                            <th>Rehmann</th>
-                            <th>7676</th>
-                            <th>Stingray Rider</th>
-                            <th>38,000</th>
-                            <th></th>
+                            <td>Ben</td>
+                            <td>Rehmann</td>
+                            <td>7676</td>
+                            <td>Stingray Rider</td>
+                            <td>38,000</td>
+                            <td></td>
                         </tr>
                         
                     </table>
 
-
 <!-- total monthly portion -->
-                <div>
-                    <h4>Total Monthly Salary:</h4>
-                </div>
-                <div id="total-month">
-                    <!-- more inner html -->
-                </div>
-
-
 
             </form>
+
+
         </main>
     </body>
 </html>

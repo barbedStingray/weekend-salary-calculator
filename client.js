@@ -2,8 +2,10 @@ console.log(`watch me crunch these numbers`);
 
 const employeeTableDiv = document.querySelector(`#employee-table`);
 const totalMonthDiv = document.querySelector(`#total-month`);
+const turnRedDiv = document.querySelector(`#turn-red`);
 
 let totalAnnualSalary = 0;
+
 
 function addEmployee(event){
     event.preventDefault();
@@ -21,17 +23,17 @@ function addEmployee(event){
     
 // convert the salary from a string to a number
     let personNumberSalary = Number(personStringSalary);
-    // console.log(typeof personNumberSalary);
+    console.log(typeof personNumberSalary);
 
     // adjust your total salary annually
     totalAnnualSalary += personNumberSalary;
 
 // clearing your input boxes after submission
-document.querySelector(`#first-name`).value = ``;
-document.querySelector(`#last-name`).value = ``;
-document.querySelector(`#id-number`).value = ``;
-document.querySelector(`#title-name`).value = ``;
-document.querySelector(`#annual-salary`).value = ``;
+    document.querySelector(`#first-name`).value = ``;
+    document.querySelector(`#last-name`).value = ``;
+    document.querySelector(`#id-number`).value = ``;
+    document.querySelector(`#title-name`).value = ``;
+    document.querySelector(`#annual-salary`).value = ``;
 
 // DOM population
     employeeTableDiv.innerHTML += 
@@ -41,20 +43,32 @@ document.querySelector(`#annual-salary`).value = ``;
             <td>${lastName}</td>
             <td>${idNumber}</td>
             <td>${title}</td>
-            <td id="the-salary">${personNumberSalary}</td>
-            <td><button id="remove" onclick="removeEmployee(event, ${personNumberSalary})">Remove</button></td>
+            <td>${personNumberSalary}</td>
+            <td><button id="remove" onclick="removeEmployee(event, ${personNumberSalary})">X</button></td>
         </tr>
     `;
 
-    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary}</h4>`
-    console.log(totalAnnualSalary);
-}
+    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary/12}</h4>`
+    console.log(totalAnnualSalary);    
+
+    
+
+    if(totalAnnualSalary/12 > 20000){
+        turnRedDiv.style.backgroundColor = `red`;
+    }
+
+    }
 
 function removeEmployee(event, salary){
     console.log(`removing employee`, salary);
 
     totalAnnualSalary -= salary;
-    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary}</h4>`
+
+    if(totalAnnualSalary/12 < 20000){
+        turnRedDiv.style.backgroundColor = `mintcream`;
+    }
+
+    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary/12}</h4>`
 
     event.target.parentElement.parentElement.remove();
 }
@@ -66,11 +80,6 @@ function removePlaceholder(){
     placeHolder.innerHTML = ``;
 }
 
-// function shiftMoney(value1){
-//     console.log(`in shiftMoney`);
-//     personList.push(value1);
-//     console.log(personList);
-// }
 
 
 

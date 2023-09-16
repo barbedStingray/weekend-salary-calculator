@@ -1,8 +1,65 @@
-h1 {
+
+body {
+    background-color: mintcream;
+}
+
+h1, h2 {
     color: darkgreen;
+    text-align: center;
+}
+
+td, th {
+    text-align: center;
+    margin: 20px;
+    width: 7rem;
 
 }
 
 #employee-table {
-    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+#remove {
+    background-color: darkred;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+
+
+#two-col {
+    display: block;
+    text-align: center;
+    margin-left: auto;    
+    margin-right: auto;
+}
+
+#input-field {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#submit-btn {
+    background-color: lightgreen;
+    border: 2px solid darkgreen;
+    width: 200px;
+    height: 50px;
+    display: inline-block;
+    margin: 30px 0;
+
+}
+
+#monthly-salary {
+    display: inline-block;
+}
+
+
+
+
+
