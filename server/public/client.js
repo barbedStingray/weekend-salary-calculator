@@ -14,6 +14,7 @@ function addEmployee(event){
 // remove the example
     removePlaceholder();
 
+
 // variables for input
     let firstName = document.querySelector(`#first-name`).value;
     let lastName = document.querySelector(`#last-name`).value;
@@ -48,10 +49,9 @@ function addEmployee(event){
         </tr>
     `;
 
-    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary/12}</h4>`
+    totalMonthDiv.innerHTML = `<h4>${Math.floor(totalAnnualSalary/12)}</h4>`
     console.log(totalAnnualSalary);    
 
-    
 
     if(totalAnnualSalary/12 > 20000){
         turnRedDiv.style.backgroundColor = `red`;
@@ -68,7 +68,7 @@ function removeEmployee(event, salary){
         turnRedDiv.style.backgroundColor = `mintcream`;
     }
 
-    totalMonthDiv.innerHTML = `<h4>${totalAnnualSalary/12}</h4>`
+    totalMonthDiv.innerHTML = `<h4>${Math.floor(totalAnnualSalary/12)}</h4>`
 
     event.target.parentElement.parentElement.remove();
 }
